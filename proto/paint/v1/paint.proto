@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package paint.v1;
+
+option go_package = "rpc-server/gen/proto/paint/v1;paintv1";
+
+enum Color {
+    COLOR_UNSPECIFIED = 0;
+    COLOR_BLUE = 1;
+    COLOR_RED = 2;
+    COLOR_GREEN = 3;
+}
+
+message ChangeColorRequest {
+    Color color = 1;
+}
+
+message ChangeColorResponse {
+    bool succeed = 1;
+}
+
+service PaintService {
+    rpc ChangeColor(ChangeColorRequest) returns (ChangeColorResponse) {}
+}
