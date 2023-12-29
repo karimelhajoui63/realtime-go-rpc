@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	paintv1 "rpc-server/gen/proto/paint/v1"
-	"rpc-server/gen/proto/paint/v1/paintv1connect"
+	paintv1 "rpc-server/gen/paint/v1"
+	"rpc-server/gen/paint/v1/paintv1connect"
 	"strings"
 
 	"connectrpc.com/connect"

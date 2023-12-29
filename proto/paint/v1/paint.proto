@@ -2,13 +2,27 @@ syntax = "proto3";
 
 package paint.v1;
 
-option go_package = "rpc-server/gen/proto/paint/v1;paintv1";
+option go_package = "rpc-server/gen/paint/v1;paintv1";
 
 enum Color {
     COLOR_UNSPECIFIED = 0;
     COLOR_BLUE = 1;
     COLOR_RED = 2;
     COLOR_GREEN = 3;
+}
+
+message GetColorRequest {
+}
+
+message GetColorResponse {
+    Color color = 1;
+}
+
+message GetColorStreamRequest {
+}
+
+message GetColorStreamResponse {
+    Color color = 1;
 }
 
 message ChangeColorRequest {
@@ -20,5 +34,7 @@ message ChangeColorResponse {
 }
 
 service PaintService {
+    rpc GetColor(GetColorRequest) returns (GetColorResponse) {}
+    rpc GetColorStream(GetColorStreamRequest) returns (stream GetColorStreamResponse) {}
     rpc ChangeColor(ChangeColorRequest) returns (ChangeColorResponse) {}
 }
