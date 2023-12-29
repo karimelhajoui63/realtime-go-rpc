@@ -3,6 +3,7 @@
 
 ### Commands used:
 
+```sh
 cd backend
 
 go mod init rpc-server
@@ -21,3 +22,4 @@ buf generate --template ../buf.gen.go.yaml ../proto
 
 go run cmd/server/main.go
 go run cmd/client/main.go --color=green
+```

@@ -3,6 +3,7 @@
 
 ### Commands used:
 
+```sh
 npm create vite@latest frontend -- --template react-ts
 cd frontend
 npm install
@@ -14,3 +15,4 @@ npx buf lint ../proto
 npx buf generate --template ../buf.gen.ts.yaml ../proto
 
 npm run dev
+```
