@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+
 	rpchandler "rpc-server/internal/adapter/inbound/painterusecase"
 	"rpc-server/internal/adapter/outbound/broadcasterrepo"
 	"rpc-server/internal/adapter/outbound/colorrepo"

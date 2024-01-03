@@ -5,9 +5,10 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strings"
+
 	"rpc-server/internal/core/domain/enum"
 	"rpc-server/internal/port/inbound"
-	"strings"
 
 	paintv1 "rpc-server/api/proto/gen/paint/v1"
 	"rpc-server/api/proto/gen/paint/v1/paintv1connect"

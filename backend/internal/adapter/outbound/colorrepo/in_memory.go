@@ -13,7 +13,6 @@ var colorStored enum.Color = enum.Red
 
 func NewInMemoryColorRepository() (outbound.ColorRepository, error) {
 	return &colorRepository{}, nil
-
 }
 
 func (c *colorRepository) Get() (enum.Color, error) {

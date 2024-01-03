@@ -19,6 +19,15 @@ buf lint ../proto
 buf generate --template ../buf.gen.go.yaml ../proto
 
 go run cmd/server/main.go
+
+# Linter
+go install mvdan.cc/gofumpt@latest
+gofumpt -l -w .
+# or for VSCode:
+# "go.useLanguageServer": true,
+# "gopls": {
+# 	"formatting.gofumpt": true,
+# },
 ```
 
 ### Bref explanation
