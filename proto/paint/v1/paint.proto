@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package paint.v1;
 
-option go_package = "rpc-server/gen/paint/v1;paintv1";
+option go_package = "rpc-server/api/proto/gen/paint/v1;paintv1";
 
 enum Color {
     COLOR_UNSPECIFIED = 0;

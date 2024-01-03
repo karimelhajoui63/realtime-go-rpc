@@ -2,9 +2,9 @@ version: v1
 plugins:
   # This will invoke protoc-gen-go
   - plugin: go
-    out: gen
+    out: api/proto/gen
     opt: paths=source_relative
   # This will invoke protoc-gen-connect-go
   - plugin: connect-go
-    out: gen
+    out: api/proto/gen
     opt: paths=source_relative

@@ -9,7 +9,7 @@ import (
 	context "context"
 	errors "errors"
 	http "net/http"
-	v1 "rpc-server/gen/paint/v1"
+	v1 "rpc-server/api/proto/gen/paint/v1"
 	strings "strings"
 )
 
