@@ -38,7 +38,7 @@ npm run dev
  - [ ] Add impressions on DX
  - [ ] Use watermill instead of the rabbitmq lib
  - [ ] Docker: clean hard coded constants
- - [ ] Generate proto file within the docker build
- - [ ] Add dev environment w/ docker
- - [ ] Add Taskfile (= Make-alternative)?
+ - [ ] Docker: generate proto file within the docker build (?)
+ - [ ] Add [dev environment](https://threedots.tech/post/go-docker-dev-environment-with-go-modules-and-live-code-reloading/) w/ docker
+ - [ ] Add Taskfile (= Make-alternative) for buf generation and docker-compose up
  - [ ] Add some tests (just for the XP)
