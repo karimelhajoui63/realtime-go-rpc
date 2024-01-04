@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { createPromiseClient } from "@connectrpc/connect";
 import { createConnectTransport } from "@connectrpc/connect-web";
 import { PaintService } from "./gen/paint/v1/paint_connect";
-import { Color, GetColorStreamResponse } from "./gen/paint/v1/paint_pb";
+import { Color } from "./gen/paint/v1/paint_pb";
 import { proto3 } from "@bufbuild/protobuf";
 
 
@@ -12,7 +12,7 @@ function getColorFromStr(color:string) {
 }
 
 const transport = createConnectTransport({
-  baseUrl: "http://localhost:8080",
+  baseUrl: "http://0.0.0.0:8080",
 });
 
 // Here we make the client itself, combining the service
@@ -35,8 +35,6 @@ export default function App() {
         setGridColors(Array(gridSize*gridSize).fill(Color[value.color]));
 
       }
-      // set state with the result
-      // setData(json);
     }
 
     // call the function
@@ -47,28 +45,9 @@ export default function App() {
 
   }, []);
 
-  // const updateGridColors = async (color: Color) => {
-  //   try {
-  //     const apiResponse = await fetchColorsFromApi(color);
-  //     setGridColors(apiResponse);
-  //   } catch (error) {
-  //     console.error('Error fetching colors:', error);
-  //   }
-  // };
-
-
-
   const handleButtonClick = async (color: string) => {
     const response = await client.changeColor({color: getColorFromStr(color)})
     console.log({response});
-    
-    // if (response.succeed) {
-      // const newColor = await client.getColor({})
-      // console.log(Color[newColor.color]);
-      
-      // setGridColors(Array(gridSize*gridSize).fill(Color[newColor.color]));
-      // updateGridColors(color);
-    // }
   };
 
   const handleGridSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {

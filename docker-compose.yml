@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+
+  rabbitmq:
+    image: 'rabbitmq:3-management-alpine'
+    container_name: 'rabbitmq'
+    ports:
+      - '5673:5672'  # RabbitMQ default port
+      - '15673:15672'  # RabbitMQ management UI port
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    networks:
+      - rabbitmq_go
+    hostname: my-rabbit
+      
+  go-server:
+    build: ./backend
+    command: ["./wait-for-it.sh", "rabbitmq:5672", "--timeout=30", "--", "bin/rpcserver"]
+    ports:
+      - '8080:8080'
+    networks:
+        - rabbitmq_go
+    depends_on:
+      - 'rabbitmq'
+
+  web-app:
+    build: ./frontend
+    ports:
+      - '45871:45871'
+    depends_on:
+      - 'go-server'
+      
+networks:
+  rabbitmq_go:
+    driver: bridge

@@ -8,6 +8,17 @@ Note: After 2 windows (by browser) the calls to the servers are buffered. I don'
 
 ### Quick start
 
+#### With Docker
+
+Just run:
+```sh
+docker-compose up
+```
+
+And visit: http://localhost:45871
+
+#### Without Docker
+
 In one terminal:
 ```sh
 cd backend
@@ -26,8 +37,8 @@ npm run dev
 
  - [ ] Add impressions on DX
  - [ ] Use watermill instead of the rabbitmq lib
- - [ ] Add docker-compose
- - [ ] Add gofumpt
+ - [ ] Docker: clean hard coded constants
+ - [ ] Generate proto file within the docker build
  - [ ] Add dev environment w/ docker
- - [ ] Add Taskfile?
+ - [ ] Add Taskfile (= Make-alternative)?
  - [ ] Add some tests (just for the XP)

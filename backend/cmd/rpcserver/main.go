@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
+	conn, err := amqp.Dial("amqp://guest:guest@rabbitmq:5672")
 	if err != nil {
 		log.Fatalln("failed to connect to RabbitMQ:", err)
 	}
@@ -40,7 +40,7 @@ func main() {
 	mux := http.NewServeMux()
 	handler := rpchandler.NewRpcPainterHandler(mux, painterUseCase)
 
-	err = http.ListenAndServe("localhost:8080", handler)
+	err = http.ListenAndServe("0.0.0.0:8080", handler)
 	if err != nil {
 		log.Fatalln("ERROR:", err)
 	}
