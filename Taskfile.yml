@@ -1,0 +1,35 @@
+
+version: '3'
+
+includes:
+  backend: 
+    taskfile: ./backend
+    dir: ./backend
+  frontend:
+    taskfile: ./frontend
+    dir: ./frontend
+
+
+tasks:
+  proto:generate:
+    aliases: [proto:gen]
+    desc: "Generate proto files"
+    cmds:
+      - task: backend:proto:gen
+      - task: frontend:proto:gen
+
+  ui:open:
+    desc: "Open the UI in the default browser"
+    cmds: 
+      - bash wait-for-api.sh http://localhost:45872 -- open http://localhost:45872
+
+  docker:up:
+    desc: "Run all docker containers"
+    deps: [proto:generate]
+    cmds: 
+      - docker-compose up --build
+
+  default:
+    desc: "Run all docker containers + open the UI"
+    deps: [docker:up, ui:open]
+

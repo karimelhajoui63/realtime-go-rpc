@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 import { createPromiseClient } from "@connectrpc/connect";
 import { createConnectTransport } from "@connectrpc/connect-web";
-import { PaintService } from "./gen/paint/v1/paint_connect";
-import { Color } from "./gen/paint/v1/paint_pb";
+import { PaintService } from "./proto/gen/paint/v1/paint_connect";
+import { Color } from "./proto/gen/paint/v1/paint_pb";
 import { proto3 } from "@bufbuild/protobuf";
 
 

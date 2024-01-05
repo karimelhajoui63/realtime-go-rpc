@@ -13,6 +13,7 @@ import (
 )
 
 func main() {
+	// "rabbitmq" here is the name of the service in the "docker-compose.yml"
 	conn, err := amqp.Dial("amqp://guest:guest@rabbitmq:5672")
 	if err != nil {
 		log.Fatalln("failed to connect to RabbitMQ:", err)

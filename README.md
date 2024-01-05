@@ -8,16 +8,23 @@ Note: After 2 windows (by browser) the calls to the servers are buffered. I don'
 
 ### Quick start
 
-#### With Docker
+#### With [Task](https://taskfile.dev/) (easier)
 
 Just run:
+```sh
+task
+```
+
+#### With Docker (easy)
+
+Run:
 ```sh
 docker-compose up
 ```
 
-And visit: http://localhost:45871
+And visit: http://localhost:45872
 
-#### Without Docker
+#### Without Docker (can by tricky)
 
 In one terminal:
 ```sh
@@ -35,10 +42,9 @@ npm run dev
 
 ### TODO 
 
- - [ ] Add impressions on DX
- - [ ] Use watermill instead of the rabbitmq lib
- - [ ] Docker: clean hard coded constants
- - [ ] Docker: generate proto file within the docker build (?)
  - [ ] Add [dev environment](https://threedots.tech/post/go-docker-dev-environment-with-go-modules-and-live-code-reloading/) w/ docker
- - [ ] Add Taskfile (= Make-alternative) for buf generation and docker-compose up
+ - [ ] Docker: clean hard coded constants
+ - [ ] Use watermill instead of the rabbitmq lib
  - [ ] Add some tests (just for the XP)
+ - [ ] Add impressions on DX
+ - [ ] Docker: generate proto file within the docker build (?)

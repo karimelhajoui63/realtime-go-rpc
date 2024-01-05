@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  proto:lint:
+    desc: "Run lint over proto files"
+    cmds:
+      - buf lint ../proto
+
+  proto:generate:
+    desc: "Generate proto files for frontend"
+    aliases: [proto:gen]
+    deps: [proto:lint]
+    cmds:
+      - npx buf generate --template ../buf.gen.ts.yaml ../proto
+    sources:
+      - ../proto/**/*.proto
+    generates:
+      - src/proto/gen/**/*.go
