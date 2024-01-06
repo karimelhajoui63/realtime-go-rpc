@@ -15,16 +15,16 @@ Just run:
 task
 ```
 
-#### With Docker (easy)
+#### ... or with Docker (still easy)
 
 Run:
 ```sh
 docker-compose up
 ```
 
-And visit: http://localhost:45872
+then visit: http://localhost:45871
 
-#### Without Docker (can by tricky)
+#### ... or even without Docker (can by tricky)
 
 In one terminal:
 ```sh
@@ -42,9 +42,9 @@ npm run dev
 
 ### TODO 
 
- - [ ] Add [dev environment](https://threedots.tech/post/go-docker-dev-environment-with-go-modules-and-live-code-reloading/) w/ docker
- - [ ] Docker: clean hard coded constants
+ - [ ] Add dev environment w/ docker
  - [ ] Use watermill instead of the rabbitmq lib
  - [ ] Add some tests (just for the XP)
  - [ ] Add impressions on DX
+ - [ ] Docker: clean hard coded constants
  - [ ] Docker: generate proto file within the docker build (?)

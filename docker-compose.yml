@@ -29,7 +29,7 @@ services:
     build: ./frontend
     command: ["./wait-for-it.sh", "rabbitmq:5672", "--strict", "--timeout=30", "--", "npm", "run", "preview"]
     ports:
-      - '45872:45871'
+      - '45871:45871'
     # ⬇️ Not clean, but didn't found the host:port of the go-server to wait if for
     networks:
       - rabbitmq_go

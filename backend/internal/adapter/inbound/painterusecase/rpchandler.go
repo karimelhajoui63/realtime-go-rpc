@@ -65,7 +65,7 @@ func NewRpcPainterHandler(mux *http.ServeMux, painterUseCase inbound.PainterUseC
 			http.MethodPost,
 		},
 		AllowedOrigins: []string{
-			"http://localhost:45872", // To allow incoming request from front-end
+			"http://localhost:45871", // To allow incoming request from front-end
 		},
 		AllowedHeaders: []string{
 			"Accept-Encoding",

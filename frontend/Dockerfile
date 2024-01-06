@@ -21,7 +21,7 @@ RUN chmod +x ./wait-for-it.sh
 RUN npm run build
 
 # Expose the port
-# EXPOSE 45872
+EXPOSE 45871
 
 # Start the application
 CMD ["npm", "run", "preview"]

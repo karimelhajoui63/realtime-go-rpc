@@ -21,7 +21,7 @@ tasks:
   ui:open:
     desc: "Open the UI in the default browser"
     cmds: 
-      - bash wait-for-api.sh http://localhost:45872 -- open http://localhost:45872
+      - bash wait-for-api.sh http://localhost:45871 -- open http://localhost:45871
 
   docker:up:
     desc: "Run all docker containers"
