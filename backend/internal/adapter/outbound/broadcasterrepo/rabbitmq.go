@@ -99,7 +99,7 @@ func (bc *RabbitmqBroadcasterRepository) Subscribe() (<-chan enum.Color, error) 
 			// Assuming you have a way to convert amqp.Delivery to enum.Color
 			colorMsg, err := enum.ColorString(string(msg.Body))
 			if err != nil {
-				log.Println("Could not convert this to enum.Color:", string(msg.Payload))
+				log.Println("Could not convert this to enum.Color:", string(msg.Body))
 				continue
 			}
 
