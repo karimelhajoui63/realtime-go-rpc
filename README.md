@@ -6,7 +6,7 @@ https://github.com/karimelhajoui63/realtime-go-rpc/assets/44633381/e6bdada5-4047
 
 Note: After 2 windows (by browser) the calls to the servers are buffered. I don't know why, but it's certainly a browser limitation.
 
-### Quick start
+## Quick start
 
 #### With [Task](https://taskfile.dev/) (easier)
 
@@ -42,7 +42,7 @@ npm run dev
 
 (See `README.md` in `frontend` and `backend` for more info)
 
-### Contribution
+## Contribution
 
 You can easly contribute, without having to install anything beside [Docker](https://www.docker.com/), [Docker Desktop](https://www.docker.com/products/docker-desktop/) (personally, I used [OrbStack](https://orbstack.dev/) because it seems faster) and [Visual Studio Code](https://code.visualstudio.com/).
 
@@ -54,7 +54,7 @@ You can browse the [Taskfile](Taskfile.yml) to see useful commands.
 _Pro tip: use [Dev Environments](https://chromewebstore.google.com/detail/dev-environments/gnagpachnalcofcblcgdbofnfakdbeka) chrome extension to open the repo in one click from GitHub_
 
 
-### TODO
+## TODO
 
  - [ ] Use watermill instead of the rabbitmq lib
  - [ ] Add some tests (just for the XP)
@@ -63,7 +63,8 @@ _Pro tip: use [Dev Environments](https://chromewebstore.google.com/detail/dev-en
  - [ ] Docker: clean hard coded constants
  - [ ] Docker: generate proto file within the docker build (?)
 
-### Troubleshooting 
+## Troubleshooting 
 
-Cannot `git push` because of `Permission denied (publickey)`?
-> run `ssh-add $HOME/.ssh/github_rsa` ([source](https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials))
+ - Cannot `git push` because of `Permission denied (publickey)`?
+
+   - Run `ssh-add $HOME/.ssh/github_rsa` ([source](https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials))
