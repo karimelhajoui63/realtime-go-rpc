@@ -6,6 +6,8 @@ https://github.com/karimelhajoui63/realtime-go-rpc/assets/44633381/b93df19f-b373
 
 Note: After 2 windows (by browser) the calls to the servers are buffered. I don't know why, but it's certainly a browser limitation.
 
+<br>
+
 ## Quick start
 
 ### With [Task](https://taskfile.dev/) (easier)
@@ -42,6 +44,8 @@ npm run dev
 
 (See `README.md` in `frontend` and `backend` for more info)
 
+<br>
+
 ## Contribution
 
 You can easly contribute, without having to install anything beside [Docker](https://www.docker.com/), [Docker Desktop](https://www.docker.com/products/docker-desktop/) (personally, I used [OrbStack](https://orbstack.dev/) because it seems faster) and [Visual Studio Code](https://code.visualstudio.com/).
@@ -54,6 +58,8 @@ You can even start docker containers within the dev container (i.e. `docker-comp
 
 _Pro tip: use [Dev Environments](https://chromewebstore.google.com/detail/dev-environments/gnagpachnalcofcblcgdbofnfakdbeka) chrome extension to open the repo in one click from GitHub_
 
+<br>
+
 
 ## To-do list
 
@@ -61,6 +67,7 @@ _Pro tip: use [Dev Environments](https://chromewebstore.google.com/detail/dev-en
  - [ ] Frontend: use 1 connection with the RPC server per sqare on the UI (not only 1 for all of them)
  - [ ] Refacto: use [Wire](https://github.com/google/wire) to provide cleaner DI (?)
 
+<br>
 
 ## Impressions on DX
 
@@ -81,6 +88,8 @@ Plus, it's retro-compatible with the gRPC's API 🔥
 - Dev containers
 
 No **more local env issues** (plus, it really smooth, identical to local) 🔥
+
+<br>
 
 
 ## Troubleshooting 
