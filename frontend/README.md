@@ -1,7 +1,7 @@
 [Official documentation](https://connectrpc.com/docs/web/getting-started) of Connect
 
 
-### Commands used in bulk:
+### Commands used in bulk (just for history purpose, do not use them directly):
 
 ```sh
 npm create vite@latest frontend -- --template react-ts

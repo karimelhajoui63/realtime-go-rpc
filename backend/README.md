@@ -1,7 +1,7 @@
 [Official documentation](https://connectrpc.com/docs/go/getting-started) of Connect
 
 
-### Commands used in bulk:
+### Commands used in bulk (just for history purpose, do not use them directly):
 
 ```sh
 cd backend

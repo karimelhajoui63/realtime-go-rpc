@@ -1,6 +1,13 @@
 version: '3'
 
 tasks:
+
+  run:
+    desc: "Run the node server for accessing the RPC client page"
+    deps: [proto:generate]
+    cmds:
+      - npm run dev
+
   proto:lint:
     desc: "Run lint over proto files"
     cmds:

@@ -2,8 +2,16 @@ version: '3'
 
 tasks:
 
+  run:
+    desc: "Run the RPC server"
+    deps: [proto:generate]
+    cmds:
+      - go run cmd/rpcserver/main.go
+
   go:lint:
     desc: "Run lint over go files"
+    preconditions:
+      - gofumpt --version
     cmds:
       - gofumpt -l -w .
 
@@ -15,7 +23,6 @@ tasks:
   proto:generate:
     desc: "Generate proto files for backend"
     aliases: [proto:gen]
-    deps: [proto:lint]
     cmds:
       - buf generate --template ../buf.gen.go.yaml ../proto
     sources:

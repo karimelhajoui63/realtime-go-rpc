@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  devcontainer:
+    build: .
+      # context: .
+      # dockerfile: Dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+      # Link cache to speed-up the building process
+      - $GOPATH/pkg/mod/cache:/go/pkg/mod/cache
+    command: sleep infinity
+    networks:
+      - rabbitmq_go
+    depends_on:
+      - 'rabbitmq'
+
+  # ON EDIT: remember to edit `../docker-compose.yaml` too
+  rabbitmq:
+    image: 'rabbitmq:3-management-alpine'
+    container_name: 'rabbitmq'
+    ports:
+      - '5673:5672'  # RabbitMQ default port
+      - '15673:15672'  # RabbitMQ management UI port
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    networks:
+      - rabbitmq_go
+    hostname: my-rabbit
+      
+networks:
+  rabbitmq_go:
+    driver: bridge

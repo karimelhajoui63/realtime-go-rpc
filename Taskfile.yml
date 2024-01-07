@@ -29,7 +29,7 @@ tasks:
     cmds: 
       - docker-compose up --build
 
-  default:
+  docker:up_n_open:
     desc: "Run all docker containers + open the UI"
     deps: [docker:up, ui:open]
 

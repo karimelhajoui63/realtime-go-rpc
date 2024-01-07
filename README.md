@@ -12,8 +12,10 @@ Note: After 2 windows (by browser) the calls to the servers are buffered. I don'
 
 Just run:
 ```sh
-task
+task docker:up_n_open  # need: brew install go-task
 ```
+
+_Tip: you can see all available tasks we the command: `task --list`_
 
 #### ... or with Docker (still easy)
 
@@ -40,11 +42,23 @@ npm run dev
 
 (See `README.md` in `frontend` and `backend` for more info)
 
+### Contribution
+
+You can easly contribute, without having to install anything beside [Docker](https://www.docker.com/), [Docker Desktop](https://www.docker.com/products/docker-desktop/) (personally, I used [OrbStack](https://orbstack.dev/) because it seems faster) and [Visual Studio Code](https://code.visualstudio.com/).
+
+Once the repo is downloaded locally, you can run the command from the VSCode palette: `Dev Containers: Reopen in Container`
+
+Here, you have your environment setup with all you need.
+You can browse the [Taskfile](Taskfile.yml) to see useful commands.
+
+_Pro tip: use [Dev Environments](https://chromewebstore.google.com/detail/dev-environments/gnagpachnalcofcblcgdbofnfakdbeka) chrome extension to open the repo in one click from GitHub_
+
+
 ### TODO 
 
- - [ ] Add dev environment w/ docker
  - [ ] Use watermill instead of the rabbitmq lib
  - [ ] Add some tests (just for the XP)
  - [ ] Add impressions on DX
+ - [ ] Use 1 connection with the RPC server per sqare on the UI (not only 1 for all of them)
  - [ ] Docker: clean hard coded constants
  - [ ] Docker: generate proto file within the docker build (?)
