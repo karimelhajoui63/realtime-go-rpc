@@ -4,13 +4,25 @@ tasks:
 
   run:
     desc: "Run the RPC server"
-    deps: [proto:generate]
+    deps: [proto:generate, go:test]
     cmds:
       # Ugly, but didn't find a way to listen to rabbitmq to be UP (wait-for-it doesn't work)
       - sleep 10
       - go run cmd/rpcserver_rabbitmq/main.go
       # The Watermill version doesn't work (the subscribe part)
       # - go run cmd/rpcserver_watermill/main.go
+
+  run:wait:
+    desc: "Run the RPC server after 10sec"
+    cmds:
+      # Ugly, but didn't find a way to listen to rabbitmq to be UP (wait-for-it doesn't work)
+      - sleep 10
+      - task: run
+
+  go:test:
+    desc: "Run all go test files"
+    cmds:
+      - go test ./...
 
   go:lint:
     desc: "Run lint over go files"

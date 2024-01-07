@@ -14,7 +14,7 @@ tasks:
 
   run:
     desc: "Run server and client locally (+ rabbitmq in a docker container)"
-    deps: [docker:rabbitmq:up, backend:run, frontend:run]
+    deps: [docker:rabbitmq:up, backend:run:wait, frontend:run:wait]
 
   docker:up_n_open:
     desc: "Run all docker containers + open the UI"

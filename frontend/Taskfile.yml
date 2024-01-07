@@ -10,6 +10,13 @@ tasks:
       - sleep 11
       - npm run dev
 
+  run:wait:
+    desc: "Run the node server for accessing the RPC client page after 11sec"
+    cmds:
+      # Ugly, but didn't find a way to listen to rabbitmq to be UP (wait-for-it doesn't work)
+      - sleep 11
+      - task: run
+
   proto:lint:
     desc: "Run lint over proto files"
     cmds:

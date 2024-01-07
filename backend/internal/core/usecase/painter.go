@@ -6,27 +6,27 @@ import (
 	"rpc-server/internal/port/outbound"
 )
 
-type painterUseCase struct {
+type PainterUseCase struct {
 	broadcasterRepo outbound.BroadcasterRepository
 	colorRepo       outbound.ColorRepository
 }
 
 func NewPainterUseCase(broadcasterRepo outbound.BroadcasterRepository, colorRepo outbound.ColorRepository) inbound.PainterUseCase {
-	return &painterUseCase{
+	return &PainterUseCase{
 		broadcasterRepo: broadcasterRepo,
 		colorRepo:       colorRepo,
 	}
 }
 
-func (p *painterUseCase) ChangeColor(color enum.Color) error {
+func (p *PainterUseCase) ChangeColor(color enum.Color) error {
 	p.colorRepo.Update(color)
 	return p.broadcasterRepo.Publish(color)
 }
 
-func (p *painterUseCase) GetColor() (enum.Color, error) {
+func (p *PainterUseCase) GetColor() (enum.Color, error) {
 	return p.colorRepo.Get()
 }
 
-func (p *painterUseCase) GetColorStream() (<-chan enum.Color, error) {
+func (p *PainterUseCase) GetColorStream() (<-chan enum.Color, error) {
 	return p.broadcasterRepo.Subscribe()
 }

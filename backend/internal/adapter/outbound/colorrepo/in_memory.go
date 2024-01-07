@@ -5,20 +5,18 @@ import (
 	"rpc-server/internal/port/outbound"
 )
 
-type colorRepository struct {
-	// TODO: move colorStored here?
+type InMemoryColorRepository struct {
+	color enum.Color
 }
-
-var colorStored enum.Color = enum.Red
 
 func NewInMemoryColorRepository() (outbound.ColorRepository, error) {
-	return &colorRepository{}, nil
+	return &InMemoryColorRepository{}, nil
 }
 
-func (c *colorRepository) Get() (enum.Color, error) {
-	return colorStored, nil
+func (imcr *InMemoryColorRepository) Get() (enum.Color, error) {
+	return imcr.color, nil
 }
 
-func (c *colorRepository) Update(color enum.Color) {
-	colorStored = color
+func (imcr *InMemoryColorRepository) Update(color enum.Color) {
+	imcr.color = color
 }
