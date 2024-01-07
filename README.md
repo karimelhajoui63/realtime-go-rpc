@@ -54,7 +54,7 @@ You can browse the [Taskfile](Taskfile.yml) to see useful commands.
 _Pro tip: use [Dev Environments](https://chromewebstore.google.com/detail/dev-environments/gnagpachnalcofcblcgdbofnfakdbeka) chrome extension to open the repo in one click from GitHub_
 
 
-### TODO 
+### TODO
 
  - [ ] Use watermill instead of the rabbitmq lib
  - [ ] Add some tests (just for the XP)
@@ -62,3 +62,8 @@ _Pro tip: use [Dev Environments](https://chromewebstore.google.com/detail/dev-en
  - [ ] Use 1 connection with the RPC server per sqare on the UI (not only 1 for all of them)
  - [ ] Docker: clean hard coded constants
  - [ ] Docker: generate proto file within the docker build (?)
+
+### Troubleshooting 
+
+Cannot `git push` because of `Permission denied (publickey)`?
+> run `ssh-add $HOME/.ssh/github_rsa` ([source](https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials))
