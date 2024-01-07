@@ -3,6 +3,7 @@ package broadcasterrepo
 import (
 	"context"
 	"fmt"
+	"log"
 	"time"
 
 	"rpc-server/internal/core/domain/enum"
@@ -59,8 +60,6 @@ func (bc *WattermillBroadcasterRepository) Subscribe() (<-chan enum.Color, error
 		return nil, fmt.Errorf("failed to register a subscriber: %w", err)
 	}
 
-	// TODO: abstract this logic ⬇️ because there is exactly the same in `rabbitmq.go`
-
 	// Create a new channel for enum.Color messages
 	colorChannel := make(chan enum.Color)
 
@@ -68,10 +67,10 @@ func (bc *WattermillBroadcasterRepository) Subscribe() (<-chan enum.Color, error
 	go func() {
 		defer close(colorChannel)
 		for msg := range msgs {
-			// Assuming you have a way to convert amqp.Delivery to enum.Color
+			// Assuming you have a way to convert message.Message to enum.Color
 			colorMsg, err := enum.ColorString(string(msg.Payload))
 			if err != nil {
-				// Handle the error (e.g., log it) and continue
+				log.Println("Could not convert this to enum.Color:", string(msg.Payload))
 				continue
 			}
 

@@ -55,7 +55,7 @@ You can even start docker containers within the dev container (i.e. `docker-comp
 _Pro tip: use [Dev Environments](https://chromewebstore.google.com/detail/dev-environments/gnagpachnalcofcblcgdbofnfakdbeka) chrome extension to open the repo in one click from GitHub_
 
 
-## TODO
+## To-do list
 
  - [ ] Docker: clean hard coded constants
  - [ ] Frontend: use 1 connection with the RPC server per sqare on the UI (not only 1 for all of them)
