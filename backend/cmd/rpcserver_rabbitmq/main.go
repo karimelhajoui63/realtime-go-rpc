@@ -12,9 +12,15 @@ import (
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 
+// "rabbitmq" here is the name of the service in the "docker-compose.yml"
+// var amqpURI = "amqp://guest:guest@rabbitmq:5672"
+
+// This is the URL from dev container if the rabbitmq container is ran from it
+// TODO: manage to adapt the URL from ENV variables
+var amqpURI = "amqp://guest:guest@localhost:5673"
+
 func main() {
-	// "rabbitmq" here is the name of the service in the "docker-compose.yml"
-	conn, err := amqp.Dial("amqp://guest:guest@rabbitmq:5672")
+	conn, err := amqp.Dial(amqpURI)
 	if err != nil {
 		log.Fatalln("failed to connect to RabbitMQ:", err)
 	}

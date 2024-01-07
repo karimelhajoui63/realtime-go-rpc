@@ -19,7 +19,8 @@
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/go-task:1": {},
 		"ghcr.io/devcontainers/features/node:1": {},
-		"ghcr.io/marcozac/devcontainer-features/buf:1": {}
+		"ghcr.io/marcozac/devcontainer-features/buf:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {"dockerDashComposeVersion": "v2"}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

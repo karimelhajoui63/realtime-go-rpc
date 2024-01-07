@@ -19,10 +19,10 @@ RUN wget -O ./wait-for-it.sh https://raw.githubusercontent.com/vishnubob/wait-fo
 RUN chmod +x ./wait-for-it.sh
 
 # Build
-RUN go build -o bin/rpcserver cmd/rpcserver/main.go
+RUN go build -o bin/server cmd/rpcserver_watermill/main.go
 
 # Expose the port
 EXPOSE 8080
 
 # Run
-CMD ["bin/rpcserver"]
+CMD ["bin/server"]

@@ -2,7 +2,6 @@ version: '3'
 
 services:
 
-  # ON EDIT: remember to edit `.devcontainer/docker-compose.yaml` too
   rabbitmq:
     image: 'rabbitmq:3-management-alpine'
     container_name: 'rabbitmq'
@@ -18,7 +17,7 @@ services:
       
   go-server:
     build: ./backend
-    command: ["./wait-for-it.sh", "rabbitmq:5672", "--strict", "--timeout=30", "--", "bin/rpcserver"]
+    command: ["./wait-for-it.sh", "rabbitmq:5672", "--strict", "--timeout=30", "--", "bin/server"]
     ports:
       - '8080:8080'
     networks:

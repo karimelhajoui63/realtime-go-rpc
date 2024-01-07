@@ -11,17 +11,14 @@ includes:
 
 
 tasks:
-  proto:generate:
-    aliases: [proto:gen]
-    desc: "Generate proto files"
-    cmds:
-      - task: backend:proto:gen
-      - task: frontend:proto:gen
 
-  ui:open:
-    desc: "Open the UI in the default browser"
-    cmds: 
-      - bash wait-for-api.sh http://localhost:45871 -- open http://localhost:45871
+  run:
+    desc: "Run server and client locally (+ rabbitmq in a docker container)"
+    deps: [docker:rabbitmq:up, backend:run, frontend:run]
+
+  docker:up_n_open:
+    desc: "Run all docker containers + open the UI"
+    deps: [docker:up, ui:open]
 
   docker:up:
     desc: "Run all docker containers"
@@ -29,7 +26,19 @@ tasks:
     cmds: 
       - docker-compose up --build
 
-  docker:up_n_open:
-    desc: "Run all docker containers + open the UI"
-    deps: [docker:up, ui:open]
+  docker:rabbitmq:up:
+    desc: "Run RabbitMQ in a docker container"
+    cmds: 
+      - docker-compose up rabbitmq
 
+  ui:open:
+    desc: "Open the UI in the default browser"
+    cmds: 
+      - bash wait-for-api.sh http://localhost:45871 -- open http://localhost:45871
+
+  proto:generate:
+    aliases: [proto:gen]
+    desc: "Generate proto files"
+    cmds:
+      - task: backend:proto:gen
+      - task: frontend:proto:gen

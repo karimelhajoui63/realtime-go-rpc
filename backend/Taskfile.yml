@@ -6,7 +6,11 @@ tasks:
     desc: "Run the RPC server"
     deps: [proto:generate]
     cmds:
-      - go run cmd/rpcserver/main.go
+      # Ugly, but didn't find a way to listen to rabbitmq to be UP (wait-for-it doesn't work)
+      - sleep 10
+      - go run cmd/rpcserver_rabbitmq/main.go
+      # The Watermill version doesn't work (the subscribe part)
+      # - go run cmd/rpcserver_watermill/main.go
 
   go:lint:
     desc: "Run lint over go files"

@@ -6,6 +6,8 @@ tasks:
     desc: "Run the node server for accessing the RPC client page"
     deps: [proto:generate]
     cmds:
+      # Ugly, but didn't find a way to listen to rabbitmq to be UP (wait-for-it doesn't work)
+      - sleep 11
       - npm run dev
 
   proto:lint:
