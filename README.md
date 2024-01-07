@@ -2,7 +2,7 @@
 
 The server send a stream to the clients (like websocket or SSE)
 
-https://github.com/karimelhajoui63/realtime-go-rpc/assets/44633381/e6bdada5-4047-4eba-9f2f-e136cdb11583
+https://github.com/karimelhajoui63/realtime-go-rpc/assets/44633381/b93df19f-b373-457e-bf8f-cca2b61c6878
 
 Note: After 2 windows (by browser) the calls to the servers are buffered. I don't know why, but it's certainly a browser limitation.
 
@@ -57,10 +57,8 @@ _Pro tip: use [Dev Environments](https://chromewebstore.google.com/detail/dev-en
 
 ## TODO
 
- - [ ] Add some tests (just for the XP)
- - [ ] Use 1 connection with the RPC server per sqare on the UI (not only 1 for all of them)
  - [ ] Docker: clean hard coded constants
- - [ ] Docker: generate proto file within the docker build (?)
+ - [ ] Frontend: use 1 connection with the RPC server per sqare on the UI (not only 1 for all of them)
  - [ ] Refacto: use [Wire](https://github.com/google/wire) to provide cleaner DI (?)
 
 
@@ -68,21 +66,21 @@ _Pro tip: use [Dev Environments](https://chromewebstore.google.com/detail/dev-en
 
 - Golang
 
-The typing system is really cool and bring a lot of feature that improve the DX.
+The **typing system is really cool** and bring a lot of feature that improve the DX.
 Unlike Python, when I run the program, it works on the first time (because the potentiel runtime bug is catch directly from the IDE wile coding) 🔥
 
 - Hexagonal architecture
 
-It helps to separate logic that souldn't be in the same files, and it **really** makes it easier to add/swipe an adapter 🔥
+It helps to separate logic that souldn't be in the same files, and it really makes it **easier to add/swipe an adapter** 🔥
 
 - Connect RPC
 
-Way easier to generate proto stub than with gRPC. It worked the first time (not the case - *at all* - of gRPC).
+**Way easier** to generate proto stub than with gRPC. It worked the first time (not the case - *at all* - of gRPC).
 Plus, it's retro-compatible with the gRPC's API 🔥
 
 - Dev containers
 
-No more local env issues (plus, it really smooth, identical to local) 🔥
+No **more local env issues** (plus, it really smooth, identical to local) 🔥
 
 
 ## Troubleshooting 
